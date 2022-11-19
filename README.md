@@ -21,7 +21,7 @@ Specifications in the clone include
 
 ![Screenshot of read write operation via the CLI](https://github.com/LarrySul/cli-restful-api-product-app/blob/feature/public/screenshots/process.png)
 
-<li>  When commands get executed, jobs get triggered in the background, and queue workers pick them up for dispatch and records get populated in the database</li>
+<li>  When commands get executed, jobs get triggered in the background, and queue workers pick them up for dispatch and records get populated in the database</li> <br>
 
 ![Screenshot of background jobs](https://github.com/LarrySul/cli-restful-api-product-app/blob/feature/public/screenshots/job.png)
 
@@ -34,11 +34,11 @@ Specifications in the clone include
 
 <li> Single CLI command to automate the read and write process with easy to read instructions </li>
 
-<li> The project has a total of 3 test cases (2 Unit and 1 Feature) that executes in 0.06seconds. </li>
+<li> The project has a total of 3 test cases (2 Unit and 1 Feature) that executes in 0.06seconds. </li> <br>
 
 ![Screenshot of test cases ](https://github.com/LarrySul/cli-restful-api-product-app/blob/feature/public/screenshots/test.png)
 
-<li> The project is also dockerized, pushed to dockerhub where it is available to be pulled </li>
+<li> The project is also dockerized, pushed to dockerhub where it is available to be pulled </li> <br>
 
 ![Screenshot of dockerized project ](https://github.com/LarrySul/cli-restful-api-product-app/blob/feature/public/screenshots/docker.png)
 
@@ -60,12 +60,15 @@ The application covers the following use case
 <li> When multiple discounts collide, the biggest discount must be applied. </li>
 <li> Read up to 20,000 records in CSV and process in bus batch </li>
 <li> Tests </li>
-<li> List products with pagination </li>
+<li> List products with pagination </li> <br>
 
 ![Screenshot of pagination product list ](https://github.com/LarrySul/cli-restful-api-product-app/blob/feature/public/screenshots/list.png)
-<li > Filter by category and price less than </li>
+
+
+<li > Filter by category and price less than </li> <br>
 
 ![Screenshot of query result ](https://github.com/LarrySul/cli-restful-api-product-app/blob/feature/public/screenshots/query.png)
+
 
 ## Steps to run locally 
 
