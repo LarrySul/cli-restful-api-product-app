@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,5 +20,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::group(['prefix' => 'v1/product', 'namespace' => 'Api\V1'], function () {
-    Route::get('/get-product', 'ProductController@show');
+    Route::get('/get-product', [ProductController::class, 'show']);
 });

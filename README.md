@@ -19,9 +19,12 @@ Specifications in the clone include
 
 ![Screenshot of read write operation via the CLI](https://github.com/LarrySul/cli-restful-api-product-app/blob/feature/public/screenshots/process.png)
 
-<li> When commands gets executed, jobs are triggered in the background and queue workers pick them up for dispatch </li>
+<li>  When commands get executed, jobs get triggered in the background, and queue workers pick them up for dispatch and records get populated in the database</li>
 
-![Screenshot of read write operation via the CLI](https://github.com/LarrySul/cli-restful-api-product-app/blob/feature/public/screenshots/job.png)
+![Screenshot of background jobs](https://github.com/LarrySul/cli-restful-api-product-app/blob/feature/public/screenshots/job.png)
+
+![Screenshot of database records](https://github.com/LarrySul/cli-restful-api-product-app/blob/feature/public/screenshots/database.png)
+
 
 <li>To excute the command, users need to run the artisan command `php artisan command:read-and-create-product` in the CLI </li>
 

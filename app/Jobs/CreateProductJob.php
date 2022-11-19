@@ -62,7 +62,7 @@ class CreateProductJob implements ShouldQueue
                 "sku" => $product->sku,
                 "name" => $product->name,
                 "category" => $product->category,
-                "price" => json_encode($price_array)
+                "price" => $price_array
             ]);
            
         }    
