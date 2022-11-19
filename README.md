@@ -15,7 +15,7 @@ This CLI program is built on the LARAVEL FRAMEWORK. The program is built to impl
 
 The repository contains source code on how to run the execute the Product Restful API and command. 
 
-Specifications in the clone include
+### Specifications in the clone include
 
 <li> The program reads users' I/O  and then displays options and success status in the CLI. The console command file can be found within the console > commands directory with the name <b> CreateProductCommand </b>. </li> </br>
 
@@ -59,7 +59,6 @@ The application covers the following use case
 <li> The product with sku = 000003 has a 15% discount. </li>
 <li> When multiple discounts collide, the biggest discount must be applied. </li>
 <li> Read up to 20,000 records in CSV and process in bus batch </li>
-<li> Tests </li>
 <li> List products with pagination </li> <br>
 
 ![Screenshot of pagination product list ](https://github.com/LarrySul/cli-restful-api-product-app/blob/feature/public/screenshots/list.png)
