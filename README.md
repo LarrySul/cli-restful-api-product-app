@@ -28,7 +28,9 @@ The repository contains source code on how to run the execute the Product Restfu
 ![Screenshot of database records](https://github.com/LarrySul/cli-restful-api-product-app/blob/feature/public/screenshots/database.png)
 
 
-<li>To excute the command, users need to run the artisan command `php artisan command:read-and-create-product` in the CLI </li>
+<li>To excute the command, users need to run the artisan command in the CLI </li>
+
+<pre> php artisan command:read-and-create-product </pre>
 
 <li> Writing of errors to logfile </li>
 
