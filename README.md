@@ -58,6 +58,12 @@ The application covers the following use case
 <li> When multiple discounts collide, the biggest discount must be applied. </li>
 <li> Read up to 20,000 records in CSV and process in bus batch </li>
 <li> Tests </li>
+<li> List products with pagination </li>
+
+![Screenshot of pagination product list ](https://github.com/LarrySul/cli-restful-api-product-app/blob/feature/public/screenshots/list.png)
+<li > Filter by category and price less than </li>
+
+![Screenshot of query result ](https://github.com/LarrySul/cli-restful-api-product-app/blob/feature/public/screenshots/query.png)
 
 ## Steps to run locally 
 
