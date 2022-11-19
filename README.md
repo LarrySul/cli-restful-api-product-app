@@ -1,12 +1,14 @@
 ## CLI Restful API Product App
 
 
-This CLI program is built on the LARAVEL FRAMEWORK. The program is built to implement a REST API endpoint that given a list of products, applies some discounts to them and can be filtered. 
-The program uses Two (2) file options to read and create products.
+This CLI program is built on the LARAVEL FRAMEWORK. The program is built to implement a REST API endpoint that given a list of products, applies some discounts to them and can be filtered.
 
-<li> Config Shopping list file - The file contains 5 listed product items in the assessment docs </li>
 
-<li> Product.csv file - The file contains randomly generated 20,000 product items stored in the public path  </li>
+<p> The program uses Two (2) file options to read and create products </p>
+
+<li> Config Shopping list - The file contains 5 listed product items in the assessment docs </li>
+
+<li> Product.csv - The file contains randomly generated 20,000 product items stored in the public path  </li>
 
 
 ## Repository Overview 
@@ -87,7 +89,6 @@ The application covers the following use case
     GET /products 
 
     (optional) paginate - 10 
-    (optional) query - 'boots' 
-    (optional) query - 50 (priceLessThan)
+    (optional) filter_by - 'boots' 
+    (optional) price_less_than - 1000
 </pre>
-Once the command is done you'll get a success message in the CLI and in Postman respectively :) 
