@@ -1,64 +1,84 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+## CLI Restful API Product App
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
 
-## About Laravel
+This CLI program is built on the LARAVEL FRAMEWORK. The program is built to implement a REST API endpoint that given a list of products, applies some discounts to them and can be filtered. 
+The program uses Two (2) file options to read and create products.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+<li> Config Shopping list file - The file contains 5 listed product items in the assessment docs </li>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+<li> Product.csv file - The file contains randomly generated 20,000 product items stored in the public path  </li>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
+## Repository Overview 
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+The repository contains source code on how to run the execute the Product Restful API and command. 
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Specifications in the clone include
 
-## Laravel Sponsors
+<li> The program reads users' I/O  and then displays options and success status in the CLI. The console command file can be found within the console > commands directory with the name <b> CreateProductCommand </b>. </li> </br>
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+![Screenshot of read write operation via the CLI](https://github.com/LarrySul/cli-restful-api-product-app/blob/feature/public/screenshots/process.png)
 
-### Premium Partners
+<li> When commands gets executed, jobs are triggered in the background and queue workers pick them up for dispatch </li>
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+![Screenshot of read write operation via the CLI](https://github.com/LarrySul/cli-restful-api-product-app/blob/feature/public/screenshots/job.png)
 
-## Contributing
+<li>To excute the command, users need to run the artisan command `php artisan command:read-and-create-product` in the CLI </li>
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+<li> Writing of errors to logfile </li>
 
-## Code of Conduct
+<li> Single CLI command to automate the read and write process with easy to read instructions </li>
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+<li> The project has a total of 3 test cases (2 Unit and 1 Feature) that executes in 0.06seconds. </li>
 
-## Security Vulnerabilities
+![Screenshot of test cases ](https://github.com/LarrySul/cli-restful-api-product-app/blob/feature/public/screenshots/test.png)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+<li> The project is also dockerized, pushed to dockerhub where it is available to be pulled </li>
 
-## License
+![Screenshot of dockerized project ](https://github.com/LarrySul/cli-restful-api-product-app/blob/feature/public/screenshots/docker.png)
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Requirements 
+
+<li> Download <a href="https://www.php.net/downloads.php"> PHP V8.1 </a> and above. </li>
+
+<li> Install <a href="https://getcomposer.org/download/"> Composer </a> </li>
+
+<li> If you'll like to use docker you should <a href="https://www.docker.com/products/docker-desktop/" >download docker desktop </a> and pull the image </li>
+
+
+## Explanation
+
+The application covers the following use case
+
+<li> Products in the boots category have a 30% discount.</li>
+<li> The product with sku = 000003 has a 15% discount. </li>
+<li> When multiple discounts collide, the biggest discount must be applied. </li>
+<li> Read up to 20,000 records in CSV and process in bus batch </li>
+<li> Tests </li>
+
+## Steps to run locally 
+
+<li> Clone this repository: </li>
+
+<pre> git clone https://github.com/LarrySul/cli-restful-api-product-app </pre> or pull image via docker
+
+<pre>  docker pull olanrewaju1992/cli-restful-api-product-app:latest </pre>
+
+<li> Install dependencies: </li>
+
+<pre> composer install </pre>
+
+<li> Open the CLI in preferred editor and run the command: </li>
+
+<pre> php artisan command:read-and-create-product </pre>
+
+<li> To retrieve the paginated list of products  </li>
+
+<pre>
+    GET /products 
+
+    (optional) paginate - 10 
+    (optional) query - 'boots' 
+    (optional) query - 50 (priceLessThan)
+</pre>
+Once the command is done you'll get a success message in the CLI and in Postman respectively :) 
