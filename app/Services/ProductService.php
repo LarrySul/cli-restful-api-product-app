@@ -9,7 +9,7 @@ use App\Jobs\CreateProductJob;
 use Illuminate\Support\Facades\Bus;
 
 
-class ProductServices
+class ProductService
 {
     public function __construct(){}
 

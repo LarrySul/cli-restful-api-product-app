@@ -4,7 +4,7 @@ namespace App\Console\Commands;
 
 use App\Enums\FileLocationEnum;
 use Illuminate\Console\Command;
-use App\Services\ProductServices;
+use App\Services\ProductService;
 
 class CreateProductCommand extends Command
 {
@@ -27,7 +27,7 @@ class CreateProductCommand extends Command
      *
      * @return void
      */
-    public function __construct(ProductServices $product_service)
+    public function __construct(ProductService $product_service)
     {
         parent::__construct();
         $this->product_service = $product_service;
