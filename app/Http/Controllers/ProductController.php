@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use App\Enums\StatusCodeEnum;
 
 class ProductController extends Controller
 {
@@ -17,18 +18,21 @@ class ProductController extends Controller
     {   
         $paginate = $request->paginate ?? 5;
         $query = $request->filter_by;
-        $price_less_than = $request->price_less_than;
+        $price_less_than = $request->price_less_than ?? null;
         if(isset($query) && strlen($query) > 3 || isset($price_less_than)){
-            $products = Product::where('category', 'like', '%' . $query . '%')
-                            ->where('price->original', '<=', $price_less_than)
-                            ->paginate($paginate);
+            $products = Product::where(function ($q) use($query){
+                return $q->where('category', 'like', '%' . $query . '%');
+            })->when(($price_less_than), function($q) use($price_less_than){
+                return $q->where('price->original', '<=', $price_less_than);
+            })->paginate($paginate);
         }else{
             $products = Product::paginate($paginate);
         }
        
         return response()->json([
+            'status' => 200,
+            'message' => 'Successful',
             'data' => $products,
-            'message' => 'Successful'
-        ], 200);
+        ]);
     }
 }
