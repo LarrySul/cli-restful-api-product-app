@@ -17,7 +17,7 @@ class ProductController extends Controller
     {   
         $paginate = $request->paginate ?? 5;
         $query = $request->filter_by;
-        $price_less_than = $request->price_less_than ?? null;
+        $price_less_than = $request->price_less_than;
         if(isset($query) && strlen($query) > 3 || isset($price_less_than)){
             $products = Product::where(function ($q) use($query){
                 return $q->where('category', 'like', '%' . $query . '%');
