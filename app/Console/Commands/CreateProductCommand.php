@@ -8,6 +8,7 @@ use App\Services\ProductService;
 
 class CreateProductCommand extends Command
 {
+
     /**
      * The name and signature of the console command.
      *
@@ -27,6 +28,9 @@ class CreateProductCommand extends Command
      *
      * @return void
      */
+
+    protected $product_service, $path, $file_path, $product_data_path;
+
     public function __construct(ProductService $product_service)
     {
         parent::__construct();

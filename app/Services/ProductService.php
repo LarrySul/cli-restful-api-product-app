@@ -8,7 +8,6 @@ use Illuminate\Bus\Batchable;
 use App\Jobs\CreateProductJob;
 use Illuminate\Support\Facades\Bus;
 
-
 class ProductService
 {
     public function __construct(){}
