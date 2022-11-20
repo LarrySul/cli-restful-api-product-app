@@ -58,10 +58,11 @@ class CreateProductJob implements ShouldQueue
                 "currency" => self::CURRENCY
             ];
 
-            Product::create([
+            Product::firstOrCreate([
                 "sku" => $product->sku,
-                "name" => $product->name,
                 "category" => $product->category,
+                "name" => $product->name,
+            ],[
                 "price" => $price_array
             ]);
            

@@ -4,6 +4,7 @@ namespace Tests\Unit;
 
 use Tests\TestCase;
 use App\Models\Product;
+use App\Jobs\CreateProductJob;
 use App\Services\ProductService;
 use Illuminate\Testing\Fluent\AssertableJson;
 

@@ -18,8 +18,7 @@ class ProductTest extends TestCase
     public function test_read_and_create_product()
     {
         $this->artisan('command:read-and-create-product')
-                ->expectsQuestion('Enter preferred product file path', FileLocationEnum::STORAGE->value)
-                ->expectsQuestion('Enter filename in public directory', 'Product.csv')
+                ->expectsQuestion('Enter preferred product file path', FileLocationEnum::CONFIG->value)
                 ->assertSuccessful();
     }
 }
