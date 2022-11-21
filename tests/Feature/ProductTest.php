@@ -17,17 +17,15 @@ class ProductTest extends TestCase
      * @return void
      */
 
-    public function test_input_output_command_is_successful()
+    public function test_verify_cli_command_and_dispatch_queue()
     {
         $this->artisan('command:read-and-create-product')
                 ->expectsQuestion('Enter preferred product file path', FileLocationEnum::CONFIG->value)
                 ->assertSuccessful();
-    }
-
-    public function test_create_product_job_is_pushed_to_queue()
-    {
+                
         Queue::fake();
         CreateProductJob::dispatch(config('shopping-list')['products']);
         Queue::assertPushed(CreateProductJob::class);
     }
+
 }

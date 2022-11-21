@@ -36,7 +36,7 @@ The repository contains source code on how to run the execute the Product Restfu
 
 <li> Single CLI command to automate the read and write process with easy to read instructions </li>
 
-<li> The project has a total of 2 test cases (1 Unit and 1 Feature) </li> <br>
+<li> The project has a total of 6 test cases (5 Unit and 1 Feature) </li> <br>
 
 ![Screenshot of test cases ](https://github.com/LarrySul/cli-restful-api-product-app/blob/feature/public/screenshots/test.png)
 
