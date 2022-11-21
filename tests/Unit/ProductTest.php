@@ -69,7 +69,7 @@ class ProductTest extends TestCase
 
     public function test_list_all_product()
     {
-        $response = $this->get(route('get-product'));
+        $response = $this->get(route('get-products'));
         $response->assertJson(fn (AssertableJson $json) =>
             $json->hasAll(['status', 'data', 'message'])
         );

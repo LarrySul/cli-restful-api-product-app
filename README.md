@@ -90,7 +90,7 @@ The application covers the following use case
 <li> To retrieve the paginated list of products  </li>
 
 <pre>
-    GET /products 
+    GET v1/products 
 
     (optional) paginate - 10 
     (optional) filter_by - 'boots' 
