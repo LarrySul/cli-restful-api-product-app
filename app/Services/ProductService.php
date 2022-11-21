@@ -12,7 +12,7 @@ class ProductService
 {
     public function __construct(){}
 
-    public function readProductDataFromConfig($product_array)
+    public function readProductDataFromConfig(array $product_array)
     {
         try {
             return CreateProductJob::dispatch($product_array);
@@ -21,7 +21,7 @@ class ProductService
         }
     }
 
-    public function readProductDataFromCsv($product_data_path)
+    public function readProductDataFromCsv(string $product_data_path)
     {
         try {
             $product_array = [];
